@@ -72,4 +72,10 @@ import { selectedButton } from '../composables/useSelectedButton';
   min-height: calc(100vh - 300px);
 }
 
+@media (max-width: 768px) {
+  .tabs {
+    width: 95vw;
+}
+}
+
 </style>

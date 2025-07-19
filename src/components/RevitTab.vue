@@ -137,8 +137,9 @@ const { toggleTheme, isDark } = useTheme()
 
 .revit-tab {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 50%, #d8d8d8 100%);
   border-bottom: 2px solid #a0a0a0;
   box-shadow: 
