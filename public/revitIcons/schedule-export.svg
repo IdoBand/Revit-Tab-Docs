@@ -1,0 +1,47 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Table/grid background -->
+  <rect x="3" y="6" width="20" height="16" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  
+  <!-- Table header -->
+  <rect x="3" y="6" width="20" height="3" fill="#e6f3ff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Column dividers -->
+  <line x1="10" y1="6" x2="10" y2="22" stroke="#333333" stroke-width="1"/>
+  <line x1="16" y1="6" x2="16" y2="22" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Row dividers -->
+  <line x1="3" y1="12" x2="23" y2="12" stroke="#cccccc" stroke-width="0.5"/>
+  <line x1="3" y1="15" x2="23" y2="15" stroke="#cccccc" stroke-width="0.5"/>
+  <line x1="3" y1="18" x2="23" y2="18" stroke="#cccccc" stroke-width="0.5"/>
+  
+  <!-- Header text placeholders -->
+  <rect x="4" y="7" width="4" height="1" fill="#4169e1" rx="0.2"/>
+  <rect x="11" y="7" width="3" height="1" fill="#4169e1" rx="0.2"/>
+  <rect x="17" y="7" width="4" height="1" fill="#4169e1" rx="0.2"/>
+  
+  <!-- Data placeholders -->
+  <rect x="4" y="10.5" width="5" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="11" y="10.5" width="2" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="17" y="10.5" width="3" height="0.8" fill="#cccccc" rx="0.2"/>
+  
+  <rect x="4" y="13.5" width="4" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="11" y="13.5" width="3" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="17" y="13.5" width="2" height="0.8" fill="#cccccc" rx="0.2"/>
+  
+  <rect x="4" y="16.5" width="3" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="11" y="16.5" width="2" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="17" y="16.5" width="4" height="0.8" fill="#cccccc" rx="0.2"/>
+  
+  <rect x="4" y="19.5" width="4" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="11" y="19.5" width="3" height="0.8" fill="#cccccc" rx="0.2"/>
+  <rect x="17" y="19.5" width="3" height="0.8" fill="#cccccc" rx="0.2"/>
+  
+  <!-- Export arrow -->
+  <path d="M 25 12 L 29 16 L 25 20" stroke="#28a745" stroke-width="2" fill="none"/>
+  <line x1="24" y1="16" x2="28" y2="16" stroke="#28a745" stroke-width="2"/>
+  
+  <!-- Export file icon -->
+  <rect x="26" y="24" width="4" height="5" fill="#ffffff" stroke="#28a745" stroke-width="1"/>
+  <polygon points="26,24 28,24 30,22 30,24" fill="#28a745"/>
+  <text x="28" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#28a745">XLS</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main sheet/document -->
+  <rect x="4" y="4" width="20" height="24" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  
+  <!-- Title block area -->
+  <rect x="4" y="22" width="20" height="6" fill="#e6f3ff" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Title block divisions -->
+  <line x1="14" y1="22" x2="14" y2="28" stroke="#333333" stroke-width="0.5"/>
+  <line x1="4" y1="25" x2="24" y2="25" stroke="#333333" stroke-width="0.5"/>
+  
+  <!-- Sheet content (viewport areas) -->
+  <rect x="6" y="6" width="7" height="5" fill="#f0f8ff" stroke="#4169e1" stroke-width="1" stroke-dasharray="2,1"/>
+  <rect x="15" y="6" width="7" height="5" fill="#f0f8ff" stroke="#4169e1" stroke-width="1" stroke-dasharray="2,1"/>
+  <rect x="6" y="13" width="16" height="7" fill="#f0f8ff" stroke="#4169e1" stroke-width="1" stroke-dasharray="2,1"/>
+  
+  <!-- Title block text placeholders -->
+  <rect x="5" y="23" width="4" height="1" fill="#cccccc" rx="0.2"/>
+  <rect x="15" y="23" width="3" height="1" fill="#cccccc" rx="0.2"/>
+  <rect x="5" y="26" width="6" height="1" fill="#cccccc" rx="0.2"/>
+  
+  <!-- Plus sign for creation -->
+  <circle cx="26" cy="8" r="3" fill="#28a745" stroke="#ffffff" stroke-width="1"/>
+  <line x1="24" y1="8" x2="28" y2="8" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="26" y1="6" x2="26" y2="10" stroke="#ffffff" stroke-width="1.5"/>
+</svg>

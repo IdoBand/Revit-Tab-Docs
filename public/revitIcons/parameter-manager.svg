@@ -1,0 +1,41 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main gear -->
+  <circle cx="16" cy="16" r="8" fill="#4169e1" stroke="#333333" stroke-width="1"/>
+  <circle cx="16" cy="16" r="5" fill="#ffffff"/>
+  
+  <!-- Gear teeth -->
+  <g fill="#4169e1">
+    <rect x="15" y="6" width="2" height="3"/>
+    <rect x="15" y="23" width="2" height="3"/>
+    <rect x="6" y="15" width="3" height="2"/>
+    <rect x="23" y="15" width="3" height="2"/>
+    <rect x="11.5" y="8.5" width="2" height="2" transform="rotate(45 16 16)"/>
+    <rect x="18.5" y="8.5" width="2" height="2" transform="rotate(-45 16 16)"/>
+    <rect x="11.5" y="21.5" width="2" height="2" transform="rotate(-45 16 16)"/>
+    <rect x="18.5" y="21.5" width="2" height="2" transform="rotate(45 16 16)"/>
+  </g>
+  
+  <!-- Parameter symbols -->
+  <text x="16" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="4" fill="#4169e1" font-weight="bold">P</text>
+  <text x="16" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="3" fill="#4169e1">1</text>
+  
+  <!-- Parameter list indicators -->
+  <g stroke="#666666" stroke-width="1" fill="none">
+    <rect x="4" y="4" width="8" height="1.5" fill="#e6e6e6"/>
+    <rect x="4" y="6" width="6" height="1.5" fill="#e6e6e6"/>
+    <rect x="4" y="8" width="7" height="1.5" fill="#e6e6e6"/>
+  </g>
+  
+  <!-- Parameter connection lines -->
+  <line x1="12" y1="5" x2="8" y2="12" stroke="#4169e1" stroke-width="1" stroke-dasharray="2,1"/>
+  <line x1="10" y1="7" x2="8" y2="14" stroke="#4169e1" stroke-width="1" stroke-dasharray="2,1"/>
+  
+  <!-- Additional parameter indicators on right -->
+  <g stroke="#666666" stroke-width="1" fill="none">
+    <rect x="20" y="26" width="8" height="1.5" fill="#e6e6e6"/>
+    <rect x="22" y="28" width="6" height="1.5" fill="#e6e6e6"/>
+  </g>
+  
+  <!-- Connection line from gear to right parameters -->
+  <line x1="24" y1="17" x2="24" y2="25" stroke="#4169e1" stroke-width="1" stroke-dasharray="2,1"/>
+</svg>

@@ -1,0 +1,50 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Architectural element -->
+  <rect x="8" y="8" width="12" height="8" fill="#4169e1" stroke="#333333" stroke-width="1.5" opacity="0.7"/>
+  <text x="14" y="12.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff">ARCH</text>
+  
+  <!-- Structural element (overlapping) -->
+  <rect x="12" y="12" width="12" height="8" fill="#ff6b6b" stroke="#333333" stroke-width="1.5" opacity="0.7"/>
+  <text x="18" y="16.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff">STRUCT</text>
+  
+  <!-- MEP element (overlapping both) -->
+  <rect x="10" y="18" width="12" height="6" fill="#4ecdc4" stroke="#333333" stroke-width="1.5" opacity="0.7"/>
+  <text x="16" y="21.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff">MEP</text>
+  
+  <!-- Clash indicators -->
+  <circle cx="16" cy="14" r="2" fill="none" stroke="#dc3545" stroke-width="2"/>
+  <path d="M 14.5 12.5 L 17.5 15.5 M 14.5 15.5 L 17.5 12.5" stroke="#dc3545" stroke-width="2"/>
+  
+  <circle cx="18" cy="19" r="2" fill="none" stroke="#dc3545" stroke-width="2"/>
+  <path d="M 16.5 17.5 L 19.5 20.5 M 16.5 20.5 L 19.5 17.5" stroke="#dc3545" stroke-width="2"/>
+  
+  <!-- Review indicators -->
+  <circle cx="6" cy="6" r="2" fill="#ffc107"/>
+  <text x="6" y="7" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#333333">!</text>
+  
+  <circle cx="26" cy="6" r="2" fill="#28a745"/>
+  <path d="M 24.8 6 L 25.5 6.7 L 27.2 5" stroke="#ffffff" stroke-width="1" fill="none"/>
+  
+  <circle cx="6" cy="26" r="2" fill="#6f42c1"/>
+  <text x="6" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff">R</text>
+  
+  <circle cx="26" cy="26" r="2" fill="#17a2b8"/>
+  <text x="26" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff">C</text>
+  
+  <!-- Connection lines to review elements -->
+  <line x1="8" y1="8" x2="6" y2="8" stroke="#ffc107" stroke-width="1" stroke-dasharray="2,1" opacity="0.6"/>
+  <line x1="20" y1="12" x2="24" y2="8" stroke="#28a745" stroke-width="1" stroke-dasharray="2,1" opacity="0.6"/>
+  <line x1="10" y1="20" x2="8" y2="24" stroke="#6f42c1" stroke-width="1" stroke-dasharray="2,1" opacity="0.6"/>
+  <line x1="22" y1="20" x2="24" y2="24" stroke="#17a2b8" stroke-width="1" stroke-dasharray="2,1" opacity="0.6"/>
+  
+  <!-- Coordination arrows -->
+  <path d="M 2 16 Q 1 14 2 12" stroke="#666666" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 30 16 Q 31 18 30 20" stroke="#666666" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666666"/>
+    </marker>
+  </defs>
+</svg>

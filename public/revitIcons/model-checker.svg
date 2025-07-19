@@ -1,0 +1,35 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main shield/badge -->
+  <path d="M 16 4 L 26 8 L 26 18 Q 26 24 16 28 Q 6 24 6 18 L 6 8 Z" fill="#28a745" stroke="#1e7e34" stroke-width="1.5"/>
+  
+  <!-- Checkmark -->
+  <path d="M 11 16 L 15 20 L 21 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Model validation indicators -->
+  <g opacity="0.8">
+    <!-- Building elements being checked -->
+    <rect x="4" y="2" width="2" height="3" fill="#cccccc" stroke="#666666" stroke-width="0.5"/>
+    <rect x="26" y="2" width="2" height="3" fill="#cccccc" stroke="#666666" stroke-width="0.5"/>
+    <rect x="2" y="26" width="3" height="2" fill="#cccccc" stroke="#666666" stroke-width="0.5"/>
+    <rect x="27" y="26" width="3" height="2" fill="#cccccc" stroke="#666666" stroke-width="0.5"/>
+    
+    <!-- Check indicators -->
+    <circle cx="5" cy="3.5" r="0.8" fill="#28a745"/>
+    <path d="M 4.5 3.5 L 5 4 L 5.5 3" stroke="#ffffff" stroke-width="0.3" fill="none"/>
+    
+    <circle cx="27" cy="3.5" r="0.8" fill="#28a745"/>
+    <path d="M 26.5 3.5 L 27 4 L 27.5 3" stroke="#ffffff" stroke-width="0.3" fill="none"/>
+    
+    <circle cx="3.5" cy="27" r="0.8" fill="#28a745"/>
+    <path d="M 3 27 L 3.5 27.5 L 4 26.5" stroke="#ffffff" stroke-width="0.3" fill="none"/>
+    
+    <circle cx="28.5" cy="27" r="0.8" fill="#28a745"/>
+    <path d="M 28 27 L 28.5 27.5 L 29 26.5" stroke="#ffffff" stroke-width="0.3" fill="none"/>
+  </g>
+  
+  <!-- Validation lines -->
+  <line x1="5" y1="5" x2="12" y2="10" stroke="#28a745" stroke-width="1" stroke-dasharray="1,1" opacity="0.6"/>
+  <line x1="27" y1="5" x2="20" y2="10" stroke="#28a745" stroke-width="1" stroke-dasharray="1,1" opacity="0.6"/>
+  <line x1="5" y1="27" x2="12" y2="22" stroke="#28a745" stroke-width="1" stroke-dasharray="1,1" opacity="0.6"/>
+  <line x1="28" y1="27" x2="20" y2="22" stroke="#28a745" stroke-width="1" stroke-dasharray="1,1" opacity="0.6"/>
+</svg>

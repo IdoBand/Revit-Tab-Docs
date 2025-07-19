@@ -1,0 +1,128 @@
+[
+  {
+    "label": "Wall Cleanup",
+    "docs": "The Wall Cleanup tool automatically resolves wall intersection issues and optimizes wall connections throughout the model. This tool analyzes wall geometry and applies appropriate join conditions, ensuring proper wall intersections and clean corner details. It handles T-intersections, L-intersections, and complex multi-wall junctions while maintaining wall priorities and material continuity. The tool is essential for creating professional construction documentation with clean wall representations.",
+    "bugs": "• May not resolve intersections correctly with walls containing embedded elements\n• Performance issues when processing models with more than 1000 walls\n• Custom wall types with complex profiles may require manual adjustment after cleanup",
+    "technicalInfo": "Utilizes WallUtils.AllowWallJoinAtEnd() and WallUtils.DisallowWallJoinAtEnd() methods for automated wall connection management. Implements geometric analysis through Wall.GetCenterlines() and uses BoundingBoxIntersectsFilter for efficient wall intersection detection. Employs transaction-based wall modification with rollback capabilities for reliable cleanup operations."
+  },
+  {
+    "label": "Room Tagging",
+    "docs": "Room Tagging automatically places room tags in all untagged rooms across selected views or the entire project. This intelligent tool analyzes room geometry to determine optimal tag placement positions, avoiding conflicts with other annotations and ensuring maximum readability. It respects view-specific visibility settings and can apply different tag styles based on room categories or custom criteria, streamlining the room documentation process significantly.",
+    "bugs": "• Tag placement may overlap with existing annotations in dense floor plans\n• Tool occasionally fails to tag rooms with complex boundary geometries\n• Room tags may not appear correctly in cropped views with partial room visibility",
+    "technicalInfo": "Implements automated tagging through SpatialElementTag.Create() operations with intelligent placement algorithms using room centroid calculations. Utilizes Room.GetBoundarySegments() for boundary analysis and conflict detection with existing annotations. Employs view-specific tag type management through TagMode enumeration and custom tag family selection logic."
+  },
+  {
+    "label": "Sheet Creation",
+    "docs": "Sheet Creation tool generates standardized drawing sheets with consistent title blocks, viewports, and annotation layouts according to project templates. This tool streamlines the sheet production process by automatically creating sheets with proper naming conventions, applying corporate standards, and setting up viewport templates. It supports batch creation for multiple sheet types and maintains consistency across large drawing sets while reducing manual setup time.",
+    "bugs": "• Sheet numbering may conflict with existing sheets if sequence detection fails\n• Title block parameter population sometimes skips custom project parameters\n• Viewport placement may not account for sheet border margins in some title block families",
+    "technicalInfo": "Creates ViewSheet instances through ViewSheet.Create() with automated title block family placement and parameter population. Implements sheet numbering algorithms using string pattern matching and collision detection. Utilizes ViewportOnSheet creation with automatic viewport positioning based on title block geometry analysis and standard sheet layout templates."
+  },
+  {
+    "label": "Detail Components",
+    "docs": "Detail Components tool manages the placement and standardization of 2D detail components across construction documents. It provides a library of standard detail elements including break lines, section markers, material indications, and dimensional annotations. The tool ensures consistent graphic representation throughout the project and can automatically update detail components when standards change, maintaining drawing quality and compliance with office standards.",
+    "bugs": "• Detail components may not scale correctly when views are changed to different scales\n• Some custom detail families may not load properly in certain view types\n• Component replacement operations occasionally miss nested detail groups",
+    "technicalInfo": "Manages detail component libraries through FamilySymbol activation and DetailComponent creation workflows. Implements scale-aware component placement using view scale factor calculations and geometric transformation matrices. Utilizes category-based component organization with automatic family loading and symbol management for consistent detail representation."
+  },
+  {
+    "label": "Schedule Export",
+    "docs": "Schedule Export provides comprehensive export capabilities for Revit schedules to various formats including Excel, CSV, and PDF. This tool maintains schedule formatting, preserves calculated fields, and includes header information for seamless integration with external analysis tools. It supports batch export operations, custom file naming conventions, and can automatically update exported files when schedule data changes, facilitating coordination with external consultants and contractors.",
+    "bugs": "• Export formatting may not preserve all conditional formatting rules from Revit schedules\n• Large schedules with thousands of rows may experience timeout issues during export\n• Special characters in parameter names may cause export failures in some formats",
+    "technicalInfo": "Implements schedule data extraction through ViewSchedule.GetTableData() operations with format conversion algorithms for multiple output types. Utilizes TableData.GetSectionData() for header and content separation and employs custom CSV/Excel writers with formatting preservation logic. Includes automated file path management and update notification systems for external file synchronization."
+  },
+  {
+    "label": "Parameter Manager",
+    "docs": "Parameter Manager provides centralized control over project and shared parameters, enabling efficient parameter creation, modification, and standardization across the model. This tool validates parameter usage, identifies orphaned parameters, and ensures consistent parameter application throughout the project. It supports parameter templates, bulk parameter operations, and maintains parameter documentation for improved model governance and quality control.",
+    "bugs": "• Parameter deletion validation may not detect all parameter dependencies in complex models\n• Shared parameter synchronization occasionally fails with corrupted parameter files\n• Parameter type changes may cause data loss in some element instances",
+    "technicalInfo": "Manages parameter definitions through GlobalParametersManager and shared parameter file manipulation using DefinitionFile operations. Implements parameter usage analysis with Element.GetParameters() enumeration and dependency tracking through parameter binding validation. Utilizes transaction grouping for atomic parameter operations and includes data preservation mechanisms for parameter type conversions."
+  },
+  {
+    "label": "View Templates",
+    "docs": "View Templates tool creates and manages standardized view templates that ensure consistent graphic representation across all project views. It automates the application of visibility settings, graphic overrides, and display properties according to project standards. The tool supports template hierarchies, batch template application, and can synchronize template changes across multiple views, maintaining drawing consistency and reducing manual view setup time.",
+    "bugs": "• Template application may override custom view-specific settings without warning\n• Some graphic override combinations may result in unexpected visual conflicts\n• Template synchronization may fail for views with locked elements",
+    "technicalInfo": "Creates and manages ViewTemplate instances through ViewTemplate.Create() operations with comprehensive property inheritance systems. Implements template application algorithms using View.ApplyViewTemplateParameters() with selective override preservation logic. Utilizes batch processing capabilities through view type enumeration and includes template conflict resolution mechanisms for robust view management."
+  },
+  {
+    "label": "Model Validator",
+    "docs": "Model Validator performs comprehensive model validation against BIM standards, identifying issues related to model quality, naming conventions, and coordination requirements. This tool generates detailed reports highlighting problems such as overlapping elements, missing information, and non-compliant modeling practices. It supports custom validation rules, automated fixing of common issues, and provides actionable recommendations for model improvement and standards compliance.",
+    "bugs": "• Checker may generate false positives for valid modeling approaches in complex projects\n• Performance significantly degrades with models containing extensive worksets or links\n• Some validation rules may not account for project-specific modeling requirements",
+    "technicalInfo": "Implements comprehensive model validation through custom IFailuresProcessor implementations and rule-based checking algorithms. Utilizes FilteredElementCollector operations with geometric analysis and parameter validation logic. Employs multi-threaded checking routines for performance optimization and includes customizable rule sets through XML configuration files for project-specific validation requirements."
+  },
+  {
+    "label": "Dimension Styles",
+    "docs": "Dimension Styles tool manages and standardizes dimension appearance throughout the project by creating and applying consistent dimension styles. It ensures that all dimensions follow corporate standards for text size, precision, unit formats, and graphic representation. The tool can update existing dimensions to match new standards, create dimension style libraries, and automatically apply appropriate styles based on view types and scales.",
+    "bugs": "• Style updates may not apply correctly to dimensions in detail groups\n• Some dimension precision settings may conflict with project unit definitions\n• Dimension leader line formatting occasionally resets to default settings",
+    "technicalInfo": "Manages dimension formatting through DimensionType modification and custom style application algorithms. Implements dimension style inheritance using parameter mapping and automated precision calculation based on view scale factors. Utilizes batch dimension updating through FilteredElementCollector with dimension type validation and includes style template management for consistent dimension presentation."
+  },
+  {
+    "label": "Text Standardization",
+    "docs": "Text Standardization ensures consistent text formatting, fonts, and sizing across all project annotations and documentation. This tool identifies non-standard text elements, applies corporate text styles, and can batch-update text formatting throughout the model. It supports text style templates, automatic font substitution, and maintains text legibility at different print scales while ensuring compliance with drafting standards and accessibility requirements.",
+    "bugs": "• Font substitution may not work correctly with fonts that are not installed on all project computers\n• Text size updates may cause annotation overlap in densely annotated views\n• Some special text characters may not display correctly after standardization",
+    "technicalInfo": "Standardizes text formatting through TextElementType management and automated font family validation. Implements text style application using Element.SetParameterValue() operations for consistent typography. Utilizes font availability checking with fallback font mechanisms and includes scale-aware text sizing algorithms for optimal legibility across different view scales and print outputs."
+  },
+  {
+    "label": "Link Management",
+    "docs": "Link Management provides comprehensive tools for managing Revit links, CAD links, and external references within the project. This tool validates link paths, updates link statuses, and ensures that all team members can access linked files regardless of their local file structure. It supports link positioning updates, visibility control, and can automatically repair broken links while maintaining model coordination and preventing common collaboration issues.",
+    "bugs": "• Link path resolution may fail with network drives using different mapping conventions\n• Some link positioning updates may not synchronize correctly across all project views\n• Link reload operations occasionally fail for files locked by other users",
+    "technicalInfo": "Manages external references through RevitLinkInstance manipulation and automatic path validation algorithms. Implements link status monitoring using Document.PathName verification and includes network path standardization routines. Utilizes Transform matrix management for link positioning and employs exception handling for robust link operations in collaborative environments with complex network configurations."
+  },
+  {
+    "label": "Family Manager",
+    "docs": "Family Manager streamlines family loading, organization, and standardization processes within the project environment. This tool validates family compliance with office standards, manages family libraries, and can automatically update families when newer versions become available. It provides family usage reports, identifies duplicate families, and supports batch family operations while maintaining model performance and ensuring that all families meet project requirements.",
+    "bugs": "• Family loading may fail for families created in newer Revit versions than the current project\n• Duplicate family detection sometimes misses families with similar names but different behaviors\n• Family replacement operations may not preserve all parameter mappings in complex nested families",
+    "technicalInfo": "Manages family libraries through Family.LoadIntoDocument() operations with version validation and conflict resolution algorithms. Implements family usage analysis using FamilyInstance enumeration and dependency tracking through symbol reference validation. Utilizes automated family updating with parameter mapping preservation and includes family performance analysis for optimal model efficiency."
+  },
+  {
+    "label": "Coordination Review",
+    "docs": "Coordination Review facilitates multi-disciplinary model coordination by identifying conflicts, overlaps, and integration issues between different building systems. This tool performs clash detection between architectural, structural, and MEP elements while providing detailed conflict reports with recommended solutions. It supports federated model review, maintains coordination logs, and enables efficient communication between project disciplines for seamless project coordination.",
+    "bugs": "• Clash detection may produce false positives with certain family geometries\n• Coordination reports may not include all relevant element properties for conflict resolution\n• Performance issues may occur when reviewing models with extensive linked file networks",
+    "technicalInfo": "Implements multi-disciplinary clash detection through geometric intersection analysis and category-based conflict identification algorithms. Utilizes BoundingBoxIntersectsFilter operations with tolerance-based collision detection and includes custom conflict severity classification systems. Employs federated model analysis with link-aware geometric calculations for comprehensive coordination review capabilities."
+  },
+  {
+    "label": "Quality Assurance",
+    "docs": "Quality Assurance tool performs comprehensive model auditing to ensure compliance with BIM execution plans, modeling standards, and project requirements. It validates model completeness, checks data integrity, and verifies that all model elements contain required information for downstream processes. The tool generates quality reports, tracks quality metrics over time, and provides actionable recommendations for maintaining high model standards throughout the project lifecycle.",
+    "bugs": "• Quality checks may not account for project-specific exceptions to standard modeling practices\n• Some validation routines may timeout on very large models with complex element hierarchies\n• Quality scoring algorithms may not properly weight different types of modeling issues",
+    "technicalInfo": "Implements comprehensive quality validation through custom audit algorithms and standards compliance checking routines. Utilizes element property validation with parameter completeness analysis and includes automated quality scoring systems based on weighted criteria. Employs trend analysis for quality metrics tracking and includes customizable quality rules through configuration-based validation frameworks."
+  },
+  {
+    "label": "Batch Processing",
+    "docs": "Batch Processing enables efficient execution of repetitive tasks across multiple views, sheets, families, or project elements. This powerful tool can automate workflows such as view creation, sheet setup, family updates, and parameter modifications at scale. It supports scripted operations, custom batch routines, and progress monitoring while maintaining data integrity and providing rollback capabilities for complex multi-step operations across large project datasets.",
+    "bugs": "• Batch operations may fail midway through large datasets without proper error recovery\n• Some batch routines may not handle element dependencies correctly in complex operations\n• Progress monitoring may become unresponsive during processor-intensive batch tasks",
+    "technicalInfo": "Implements scalable batch processing through transaction grouping and automated operation queuing systems. Utilizes multi-threading capabilities with progress tracking and error handling mechanisms for robust large-scale operations. Employs memory management optimization with batch size calculation algorithms and includes operation rollback capabilities for data integrity preservation during complex automated workflows."
+  },
+  {
+    "label": "Element Purge",
+    "docs": "Element Purge removes unused elements, types, and components from the model to optimize file size and improve performance. This tool identifies orphaned families, unused materials, empty groups, and redundant elements that accumulate during the design process. It provides safe deletion with dependency checking, maintains model integrity, and can significantly reduce file sizes while improving model loading times and overall Revit performance.",
+    "bugs": "• May not detect all element dependencies in complex nested family structures\n• Purge operations on large models may cause temporary performance degradation\n• Some system families may be incorrectly identified as unused in certain scenarios",
+    "technicalInfo": "Utilizes FilteredElementCollector with category-based enumeration and dependency analysis through element usage tracking. Implements safe deletion algorithms with transaction rollback capabilities and includes performance optimization through batch deletion operations. Employs memory cleanup routines and file size analysis for comprehensive model optimization."
+  },
+  {
+    "label": "Workset Manager",
+    "docs": "Workset Manager provides comprehensive workset organization and management tools for collaborative projects. This tool automates workset creation based on element categories, manages workset visibility across views, and ensures proper element assignment according to project standards. It supports workset templates, bulk element reassignment, and maintains workset discipline organization for efficient team collaboration and model coordination.",
+    "bugs": "• Workset reassignment may fail for elements with active edit requests by other users\n• Some linked elements may not respond correctly to workset visibility changes\n• Workset template application may conflict with existing project workset structures",
+    "technicalInfo": "Manages workset operations through WorksetTable manipulation and automated element assignment algorithms. Implements workset visibility control using View.SetWorksetVisibility() operations with bulk processing capabilities. Utilizes collaborative filtering for user-aware workset management and includes conflict resolution mechanisms for multi-user environments."
+  },
+  {
+    "label": "Clash Detection",
+    "docs": "Clash Detection identifies geometric conflicts and interference between building elements across all disciplines. This advanced tool performs comprehensive clash analysis between architectural, structural, and MEP systems while providing detailed reports with clash priorities and resolution recommendations. It supports tolerance-based detection, automated clash grouping, and integrates with coordination workflows for efficient multi-disciplinary conflict resolution.",
+    "bugs": "• May generate false positives with certain family geometries containing complex nested components\n• Performance degrades significantly with models containing extensive geometric detail\n• Clash tolerance settings may not account for manufacturer-specific clearance requirements",
+    "technicalInfo": "Implements geometric intersection analysis through BoundingBoxIntersectsFilter operations with precision-based collision detection algorithms. Utilizes spatial indexing for performance optimization and includes custom clash severity classification based on element categories and proximity analysis. Employs multi-threaded processing for large model clash detection with progress monitoring capabilities."
+  },
+  {
+    "label": "Pin Manual",
+    "docs": "Pin Manual provides precise control over element pinning operations with individual element selection capabilities. This tool allows users to selectively pin critical elements that should remain fixed during design modifications. It includes visual feedback for pinned elements, batch pinning operations, and maintains pin status tracking for improved model control and change management in collaborative environments.",
+    "bugs": "• Pin status may not synchronize correctly across all project views immediately\n• Some family instances may lose pin status during family reloading operations\n• Pin visualization may not display correctly in certain view templates",
+    "technicalInfo": "Manages element pinning through Element.Pinned property manipulation with transaction-based operations for reliable pin state management. Implements visual feedback systems using element override graphics and includes batch processing capabilities for efficient multi-element pinning operations with undo functionality."
+  },
+  {
+    "label": "Pin Selection",
+    "docs": "Pin Selection enables automatic pinning of currently selected elements with batch processing capabilities. This tool streamlines the pinning workflow by allowing users to select multiple elements and apply pin status simultaneously. It includes selection filtering options, pin status verification, and provides immediate visual feedback for pinned elements to enhance model control and design stability.",
+    "bugs": "• Selection filtering may not work correctly with complex element hierarchies\n• Batch pinning operations may timeout with very large element selections\n• Pin status updates may not reflect immediately in all open views",
+    "technicalInfo": "Processes element selections through uidoc.Selection.GetElementIds() with automated pin application using Element.Pinned property updates. Implements selection validation and filtering algorithms with batch transaction processing for efficient multi-element operations and includes real-time status feedback mechanisms."
+  },
+  {
+    "label": "Pin Automatic",
+    "docs": "Pin Automatic intelligently identifies and pins elements based on predefined criteria and project standards. This tool automatically analyzes element importance, structural significance, and design intent to apply pinning strategically throughout the model. It supports custom pinning rules, category-based automation, and maintains consistent pinning standards across large projects for enhanced model stability and change control.",
+    "bugs": "• Automatic pinning algorithms may not account for project-specific design requirements\n• May over-pin elements in certain model configurations, affecting design flexibility\n• Custom pinning rules may conflict with existing manual pin assignments",
+    "technicalInfo": "Implements intelligent pinning algorithms through element analysis using category classification and parameter-based criteria evaluation. Utilizes automated rule processing with FilteredElementCollector operations and includes customizable pinning logic through configuration-based rule sets with conflict resolution mechanisms for optimal element stability management."
+  }
+]

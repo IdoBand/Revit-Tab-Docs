@@ -1,0 +1,61 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document background -->
+  <rect x="4" y="2" width="24" height="28" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  
+  <!-- Header text (standardized) -->
+  <rect x="6" y="4" width="20" height="2" fill="#4169e1" rx="0.3"/>
+  <text x="16" y="5.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff" font-weight="bold">STANDARD TITLE</text>
+  
+  <!-- Body text examples (different sizes showing standardization) -->
+  <rect x="6" y="8" width="16" height="1.5" fill="#666666" rx="0.2"/>
+  <rect x="6" y="10" width="14" height="1.5" fill="#666666" rx="0.2"/>
+  <rect x="6" y="12" width="18" height="1.5" fill="#666666" rx="0.2"/>
+  
+  <!-- Subtitle -->
+  <rect x="6" y="16" width="12" height="1.8" fill="#4169e1" rx="0.2"/>
+  <text x="12" y="17.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="1.5" fill="#ffffff">Subtitle</text>
+  
+  <!-- More body text -->
+  <rect x="6" y="20" width="15" height="1.2" fill="#666666" rx="0.2"/>
+  <rect x="6" y="22" width="17" height="1.2" fill="#666666" rx="0.2"/>
+  <rect x="6" y="24" width="13" height="1.2" fill="#666666" rx="0.2"/>
+  
+  <!-- Text formatting tools/indicators -->
+  <g opacity="0.8">
+    <!-- Font size indicator -->
+    <circle cx="26" cy="8" r="2" fill="#28a745"/>
+    <text x="26" y="9" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff">A</text>
+    
+    <!-- Bold indicator -->
+    <circle cx="26" cy="14" r="2" fill="#28a745"/>
+    <text x="26" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="2" fill="#ffffff" font-weight="bold">B</text>
+    
+    <!-- Alignment indicator -->
+    <circle cx="26" cy="20" r="2" fill="#28a745"/>
+    <g stroke="#ffffff" stroke-width="0.5">
+      <line x1="24.5" y1="19.5" x2="27.5" y2="19.5"/>
+      <line x1="24.5" y1="20.5" x2="27.5" y2="20.5"/>
+    </g>
+    
+    <!-- Style indicator -->
+    <circle cx="26" cy="26" r="2" fill="#28a745"/>
+    <text x="26" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="1.5" fill="#ffffff" font-style="italic">S</text>
+  </g>
+  
+  <!-- Arrow showing standardization process -->
+  <path d="M 2 16 Q 1 14 2 12" stroke="#28a745" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#28a745"/>
+    </marker>
+  </defs>
+  
+  <!-- "Before" indicator (messy text) -->
+  <g opacity="0.6">
+    <rect x="1" y="6" width="2" height="0.8" fill="#dc3545" rx="0.1"/>
+    <rect x="1" y="8" width="1.5" height="1.2" fill="#dc3545" rx="0.1"/>
+    <rect x="1" y="11" width="2.2" height="0.6" fill="#dc3545" rx="0.1"/>
+  </g>
+</svg>
